@@ -6,25 +6,36 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
+
+    /// <summary> Represents a die with a certain value that can be rolled to generate a random value./// </summary>
+
     internal class Die
     {
-        /*
-         * The Die class should contain one property to hold the current die value,
-         * and one method that rolls the die, returns and integer and takes no parameters.
-         */
-        public int Value = 1;
-        Random rand = new Random(); //Property
 
-        public int Roll //Method
+        /// <summary> The current value of the die./// </summary>
+
+        private int _value;
+
+
+        /// <summary> Random number generator used for rolling the die./// </summary>
+
+        Random rand = new Random();
+
+
+        /// <summary> Rolls the die and returns the result./// </summary>
+
+        /// <returns>An integer representing the rolled value of the die.</returns>
+        public int Roll
         {
-            get { return Value = rand.Next(1, 7); }
+            get { return _value = rand.Next(1, 7); }
         }
 
 
+        /// <summary>Gets the current value of the die. /// </summary>
+
         public int DieValue
-        { get { return Value; } }
-
-
-
+        {
+            get { return _value; }
+        }
     }
 }
